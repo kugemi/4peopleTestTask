@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ExchangeRatesTracker</string>
+    <string name="home_tab">Home</string>
+    <string name="favorites_tab">Favorites</string>
+</resources>
