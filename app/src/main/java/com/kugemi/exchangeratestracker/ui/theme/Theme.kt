@@ -15,7 +15,7 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.ViewCompat
-import com.kugemi.exchangeratestracker.data.enums.resources.rateNameColor
+import com.kugemi.exchangeratestracker.data.resources.rateNameColor
 
 private val DarkColorScheme = darkColorScheme(
     primary = rateNameColor,

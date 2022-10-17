@@ -11,7 +11,7 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.kugemi.exchangeratestracker.data.enums.resources.bottomBarHeight
+import com.kugemi.exchangeratestracker.data.resources.bottomBarHeight
 import com.kugemi.exchangeratestracker.ui.components.RateItem
 import com.kugemi.exchangeratestracker.utils.extensions.sortedBySortType
 import com.kugemi.exchangeratestracker.viewmodels.ExchangeRatesViewModel

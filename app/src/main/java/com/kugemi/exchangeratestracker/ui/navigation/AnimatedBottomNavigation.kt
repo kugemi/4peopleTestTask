@@ -17,8 +17,8 @@ import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.kugemi.exchangeratestracker.data.enums.resources.bottomBarColor
-import com.kugemi.exchangeratestracker.data.enums.resources.bottomBarHeight
+import com.kugemi.exchangeratestracker.data.resources.bottomBarColor
+import com.kugemi.exchangeratestracker.data.resources.bottomBarHeight
 
 @Composable
 fun AnimatedBottomNavigation(

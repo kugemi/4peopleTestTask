@@ -12,8 +12,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.kugemi.exchangeratestracker.data.enums.resources.backgroundBottomColor
-import com.kugemi.exchangeratestracker.data.enums.resources.backgroundTopColor
+import com.kugemi.exchangeratestracker.data.resources.backgroundBottomColor
+import com.kugemi.exchangeratestracker.data.resources.backgroundTopColor
 import com.kugemi.exchangeratestracker.ui.components.MainScreenController
 import com.kugemi.exchangeratestracker.ui.navigation.AnimatedBottomNavigation
 import com.kugemi.exchangeratestracker.ui.navigation.MainScreenTab

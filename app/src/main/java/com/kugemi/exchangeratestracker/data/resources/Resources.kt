@@ -1,4 +1,4 @@
-package com.kugemi.exchangeratestracker.data.enums.resources
+package com.kugemi.exchangeratestracker.data.resources
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp

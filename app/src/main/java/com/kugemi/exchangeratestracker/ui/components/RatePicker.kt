@@ -22,9 +22,9 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Popup
 import androidx.compose.ui.window.PopupProperties
 import com.kugemi.exchangeratestracker.data.enums.SortType
-import com.kugemi.exchangeratestracker.data.enums.resources.backgroundTopColor
-import com.kugemi.exchangeratestracker.data.enums.resources.defaultPadding
-import com.kugemi.exchangeratestracker.data.enums.resources.fontSizeSmall
+import com.kugemi.exchangeratestracker.data.resources.backgroundTopColor
+import com.kugemi.exchangeratestracker.data.resources.defaultPadding
+import com.kugemi.exchangeratestracker.data.resources.fontSizeSmall
 import com.kugemi.exchangeratestracker.viewmodels.ExchangeRatesViewModel
 
 @Composable

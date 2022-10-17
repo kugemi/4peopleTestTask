@@ -22,10 +22,10 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.kugemi.exchangeratestracker.data.enums.resources.bottomBarHeight
-import com.kugemi.exchangeratestracker.data.enums.resources.bottomBarIconSize
-import com.kugemi.exchangeratestracker.data.enums.resources.bottomBarPadding
-import com.kugemi.exchangeratestracker.data.enums.resources.fontBottomBar
+import com.kugemi.exchangeratestracker.data.resources.bottomBarHeight
+import com.kugemi.exchangeratestracker.data.resources.bottomBarIconSize
+import com.kugemi.exchangeratestracker.data.resources.bottomBarPadding
+import com.kugemi.exchangeratestracker.data.resources.fontBottomBar
 
 @SuppressLint("CoroutineCreationDuringComposition")
 @Composable

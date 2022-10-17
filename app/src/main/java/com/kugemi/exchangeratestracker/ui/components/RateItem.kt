@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import com.kugemi.exchangeratestracker.data.enums.resources.*
+import com.kugemi.exchangeratestracker.data.resources.*
 import com.kugemi.exchangeratestracker.model.local_dto.FavoriteRate
 import com.kugemi.exchangeratestracker.viewmodels.FavoriteRatesViewModel
 
