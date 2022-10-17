@@ -17,6 +17,8 @@ import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.kugemi.exchangeratestracker.data.enums.resources.bottomBarColor
+import com.kugemi.exchangeratestracker.data.enums.resources.bottomBarHeight
 
 @Composable
 fun AnimatedBottomNavigation(
@@ -42,7 +44,7 @@ fun AnimatedBottomNavigation(
                 .onGloballyPositioned {
                     width = it.size.width.toFloat()
                 },
-            backgroundColor = Color(0xFF9796f0)
+            backgroundColor = bottomBarColor
         ) {
             tabs.forEachIndexed { index, tab ->
                 AnimatedBottomNavigationItem(
@@ -83,7 +85,7 @@ fun BottomNavigation(
         Row(
             Modifier
                 .fillMaxWidth()
-                .height(56.dp)
+                .height(bottomBarHeight)
                 .selectableGroup(),
             horizontalArrangement = Arrangement.SpaceBetween,
             content = content

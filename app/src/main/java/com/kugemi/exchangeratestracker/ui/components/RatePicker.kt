@@ -22,6 +22,9 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Popup
 import androidx.compose.ui.window.PopupProperties
 import com.kugemi.exchangeratestracker.data.enums.SortType
+import com.kugemi.exchangeratestracker.data.enums.resources.backgroundTopColor
+import com.kugemi.exchangeratestracker.data.enums.resources.defaultPadding
+import com.kugemi.exchangeratestracker.data.enums.resources.fontSizeSmall
 import com.kugemi.exchangeratestracker.viewmodels.ExchangeRatesViewModel
 
 @Composable
@@ -35,7 +38,7 @@ fun RatePicker(
     ElevatedCard(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(15.dp)
+            .padding(defaultPadding)
             .clickable { isShowPopup = true },
         colors = CardDefaults.cardColors(
             containerColor = Color.White
@@ -50,14 +53,14 @@ fun RatePicker(
             )
         }
         Row(
-            modifier = Modifier.padding(15.dp),
+            modifier = Modifier.padding(defaultPadding),
             horizontalArrangement = Arrangement.Center
         ) {
             currentRate.value?.let { currentRate ->
                 Text(
                     text = currentRate,
                     color = Color.Black,
-                    fontSize = 16.sp
+                    fontSize = fontSizeSmall
                 )
             }
         }
@@ -78,22 +81,24 @@ private fun PopupPicker(
         ElevatedCard(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(15.dp),
+                .padding(defaultPadding),
             colors = CardDefaults.cardColors(
-                containerColor = Color(0xFFE0EAFC)
+                containerColor = backgroundTopColor
             ),
         ) {
             rates.value?.let { rates ->
-                LazyColumn(modifier = Modifier.padding(16.dp)) {
+                LazyColumn(modifier = Modifier.padding(defaultPadding)) {
                     itemsIndexed(rates) { index, item ->
                         Text(
-                            modifier = Modifier.clickable {
-                                exchangeViewModel.setCurrentRate(item.name)
-                                updateIsShowPopup(false)
+                            modifier = Modifier
+                                .padding(defaultPadding)
+                                .clickable {
+                                    exchangeViewModel.setCurrentRate(item.name)
+                                    updateIsShowPopup(false)
                             },
                             text = item.name,
                             color = Color.Black,
-                            fontSize = 16.sp
+                            fontSize = fontSizeSmall
                         )
                         if (index < rates.lastIndex) {
                             Divider(color = Color.Black)

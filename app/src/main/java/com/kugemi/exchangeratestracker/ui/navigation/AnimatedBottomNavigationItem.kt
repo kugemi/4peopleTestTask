@@ -22,6 +22,10 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.kugemi.exchangeratestracker.data.enums.resources.bottomBarHeight
+import com.kugemi.exchangeratestracker.data.enums.resources.bottomBarIconSize
+import com.kugemi.exchangeratestracker.data.enums.resources.bottomBarPadding
+import com.kugemi.exchangeratestracker.data.enums.resources.fontBottomBar
 
 @SuppressLint("CoroutineCreationDuringComposition")
 @Composable
@@ -34,14 +38,14 @@ fun AnimatedBottomNavigationItem(
     interactionSource: MutableInteractionSource = remember { MutableInteractionSource() }
 ) {
     val top by animateDpAsState(
-        targetValue = if (selected) 0.dp else 56.dp,
+        targetValue = if (selected) 0.dp else bottomBarHeight,
         animationSpec = SpringSpec(dampingRatio = 0.5f, stiffness = 200f)
     )
     Box(
         modifier = Modifier
             .width(tabSize)
-            .height(56.dp)
-            .padding(start = 30.dp, end = 30.dp)
+            .height(bottomBarHeight)
+            .padding(start = bottomBarPadding, end = bottomBarPadding)
             .clickable(
                 interactionSource = interactionSource,
                 indication = null
@@ -56,19 +60,19 @@ fun AnimatedBottomNavigationItem(
 
             contentDescription = null,
             modifier = Modifier
-                .height(56.dp)
-                .width(26.dp)
+                .height(bottomBarHeight)
+                .width(bottomBarIconSize)
                 .offset(y = top)
         )
         Box(
             contentAlignment = Alignment.Center,
             modifier = Modifier
-                .height(56.dp)
-                .offset(y = top - 56.dp)
+                .height(bottomBarHeight)
+                .offset(y = top - bottomBarHeight)
         ) {
             Text(
                 text = stringResource(id = label),
-                fontSize = 14.sp,
+                fontSize = fontBottomBar,
                 fontWeight = FontWeight.Bold,
                 color = Color.White,
                 textAlign = TextAlign.Center

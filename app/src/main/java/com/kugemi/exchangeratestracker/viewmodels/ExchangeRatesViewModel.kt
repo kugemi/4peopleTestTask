@@ -37,6 +37,12 @@ class ExchangeRatesViewModel @Inject constructor(private val repository: IExchan
         }
     }
 
+    fun updateRates(base: String) {
+        viewModelScope.launch(Dispatchers.IO) {
+            myRates.postValue(repository.getRates(base).rates)
+        }
+    }
+
     fun setCurrentRate(rateName: String) {
         myCurrentRate.postValue(rateName)
     }

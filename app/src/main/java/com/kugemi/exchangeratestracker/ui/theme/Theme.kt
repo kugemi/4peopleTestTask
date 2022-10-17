@@ -15,17 +15,18 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.ViewCompat
+import com.kugemi.exchangeratestracker.data.enums.resources.rateNameColor
 
 private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80
+    primary = rateNameColor,
+    secondary = rateNameColor,
+    tertiary = rateNameColor
 )
 
 private val LightColorScheme = lightColorScheme(
-    primary = Color(0xFF928DAB),
-    secondary = Color(0xFF928DAB),
-    tertiary = Color(0xFF928DAB)
+    primary = rateNameColor,
+    secondary = rateNameColor,
+    tertiary = rateNameColor
 
     /* Other default colors to override
     background = Color(0xFFFFFBFE),

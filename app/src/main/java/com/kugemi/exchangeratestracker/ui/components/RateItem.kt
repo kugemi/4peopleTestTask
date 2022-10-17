@@ -10,11 +10,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
+import com.kugemi.exchangeratestracker.data.enums.resources.*
 import com.kugemi.exchangeratestracker.model.local_dto.FavoriteRate
-import com.kugemi.exchangeratestracker.ui.theme.ExchangeRatesTrackerTheme
 import com.kugemi.exchangeratestracker.viewmodels.FavoriteRatesViewModel
 
 @Composable
@@ -36,26 +33,26 @@ fun RateItem(
     ElevatedCard(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(15.dp),
+            .padding(defaultPadding),
         colors = CardDefaults.cardColors(
             containerColor =  Color.White,
         ),
     ) {
         Row(
-            modifier = Modifier.padding(15.dp)
+            modifier = Modifier.padding(defaultPadding)
         ) {
             Text(
                 modifier = Modifier.weight(1f),
                 text = name,
-                color = Color(0xFF928DAB),
-                fontSize = 24.sp,
+                color = rateNameColor,
+                fontSize = fontSizeLarge,
                 fontWeight = FontWeight.Bold
             )
             Text(
                 modifier = Modifier.weight(2f),
                 text = value,
                 color = Color.Black,
-                fontSize = 24.sp
+                fontSize = fontSizeLarge
             )
             Row(
                 modifier = Modifier
@@ -65,7 +62,7 @@ fun RateItem(
                 horizontalArrangement = Arrangement.End
             ) {
                 IconButton(
-                    modifier = Modifier.size(30.dp),
+                    modifier = Modifier.size(iconSize),
                     onClick = {
                         if (!isSelected) {
                             favoriteRatesViewModel.addFavoriteRate(FavoriteRate().apply {
@@ -78,7 +75,7 @@ fun RateItem(
                 ) {
                     Icon(
                         imageVector = Icons.Filled.Star,
-                        tint = if (isSelected) Color(0xFFFFE000) else Color.Black,
+                        tint = if (isSelected) iconStarColor else Color.Black,
                         contentDescription = "contentDescription",
                     )
                 }

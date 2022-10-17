@@ -12,6 +12,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.kugemi.exchangeratestracker.data.enums.resources.backgroundBottomColor
+import com.kugemi.exchangeratestracker.data.enums.resources.backgroundTopColor
 import com.kugemi.exchangeratestracker.ui.components.MainScreenController
 import com.kugemi.exchangeratestracker.ui.navigation.AnimatedBottomNavigation
 import com.kugemi.exchangeratestracker.ui.navigation.MainScreenTab
@@ -26,7 +28,7 @@ fun MainScreen(
 ) {
     var selectedTab by remember { mutableStateOf(MainScreenTab.getTabByResource(0)) }
 
-    Scaffold(
+    Scaffold (
         bottomBar = {
             AnimatedBottomNavigation(
                 selectedTab = selectedTab,
@@ -34,16 +36,13 @@ fun MainScreen(
             )
         }
     ) {
-
-
-
         Column (
             modifier = Modifier
                 .background(
                     brush = Brush.verticalGradient(
                         colors = listOf(
-                            Color(0xFFE0EAFC),
-                            Color(0xFFCFDEF3)
+                            backgroundTopColor,
+                            backgroundBottomColor
                         )
                     )
                 )
