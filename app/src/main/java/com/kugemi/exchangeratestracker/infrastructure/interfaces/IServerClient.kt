@@ -4,5 +4,5 @@ import com.kugemi.exchangeratestracker.model.server_dto.ExchangeRates
 
 interface IServerClient {
 
-    suspend fun getRates(): ExchangeRates
+    suspend fun getRates(base: String): ExchangeRates
 }

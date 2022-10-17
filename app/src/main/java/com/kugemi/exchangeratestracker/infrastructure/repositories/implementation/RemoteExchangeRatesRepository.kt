@@ -5,7 +5,7 @@ import com.kugemi.exchangeratestracker.infrastructure.repositories.interfaces.IE
 import com.kugemi.exchangeratestracker.model.server_dto.ExchangeRates
 
 class RemoteExchangeRatesRepository(private val serverClient: IServerClient) : IExchangeRatesRepository {
-    override suspend fun getRates(): ExchangeRates {
-        return serverClient.getRates()
+    override suspend fun getRates(base: String): ExchangeRates {
+        return serverClient.getRates(base)
     }
 }

@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.kugemi.exchangeratestracker.data.enums.SortType
 import com.kugemi.exchangeratestracker.infrastructure.repositories.interfaces.IExchangeRatesRepository
 import com.kugemi.exchangeratestracker.model.server_dto.RateItem
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -20,9 +21,27 @@ class ExchangeRatesViewModel @Inject constructor(private val repository: IExchan
     val rates: LiveData<List<RateItem>>
         get() = myRates
 
+    private val myCurrentRate = MutableLiveData("USD")
+
+    val currentRate: LiveData<String>
+        get() = myCurrentRate
+
+    private val mySortType = MutableLiveData(SortType.ALPHABET_ASCENDING)
+
+    val sortType: LiveData<SortType>
+        get() = mySortType
+
     init {
         viewModelScope.launch(Dispatchers.IO) {
-            myRates.postValue(repository.getRates().rates)
+            myRates.postValue(repository.getRates("USD").rates)
         }
+    }
+
+    fun setCurrentRate(rateName: String) {
+        myCurrentRate.postValue(rateName)
+    }
+
+    fun setSortType(type: SortType) {
+        mySortType.postValue(type)
     }
 }

@@ -42,7 +42,7 @@ fun AnimatedBottomNavigation(
                 .onGloballyPositioned {
                     width = it.size.width.toFloat()
                 },
-            backgroundColor = Color(0xFF928DAB)
+            backgroundColor = Color(0xFF9796f0)
         ) {
             tabs.forEachIndexed { index, tab ->
                 AnimatedBottomNavigationItem(

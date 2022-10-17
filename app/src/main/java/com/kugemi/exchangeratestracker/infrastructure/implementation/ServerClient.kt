@@ -28,13 +28,14 @@ class ServerClient : IServerClient {
             .build()
         service = retrofit.create(IApiDefinition::class.java)
     }
-    override suspend fun getRates(): ExchangeRates {
-        val serverResult: ExchangeRates = service.getRates().await()
-        val test = 1
+
+    override suspend fun getRates(base: String): ExchangeRates {
+        val serverResult: ExchangeRates = service.getRates(APIKEY, base).await()
         return ExchangeRates(serverResult.rates)
     }
 
     companion object {
         private const val BASE_URL = "https://api.apilayer.com/exchangerates_data/"
+        private const val APIKEY = "h81DOL3ioFd04egOOHe0B7Q2tkPoo03l"
     }
 }
